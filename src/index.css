@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pop-pink: #ff007f;
+  --color-pop-blue: #00e5ff;
+  --color-pop-yellow: #fff01f;
+  --color-pop-dark: #1a1a1a;
+  
+  --font-sans: 'Kanit', 'Inter', sans-serif;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* UI สไตล์ Pop-Art: เส้นขอบหนาและเงาที่คมชัด */
+.pop-card {
+  @apply border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-2xl bg-white p-6;
+}
+
+.pop-button {
+  @apply border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] 
+         active:shadow-none active:translate-x-1 active:translate-y-1 
+         transition-all font-bold py-3 px-6 rounded-xl uppercase tracking-wider;
+}
+
+/* Animation สำหรับบาริสต้าและกราฟ */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-vibe {
+  animation: bounce-slow 3s infinite ease-in-out;
+}

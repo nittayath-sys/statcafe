@@ -1,0 +1,15 @@
+[build]
+  # คำสั่งสำหรับสร้างแพ็กเกจแอปพลิเคชันให้พร้อมใช้งานจริง
+  command = "npm run build"
+  # แฟ้มที่เก็บแอปพลิเคชันที่สร้างเสร็จแล้ว (Vite จะสร้างโฟลเดอร์ dist)
+  publish = "dist"
+
+[build.environment]
+  # บังคับให้ระบบใช้ Node.js เวอร์ชันล่าสุดที่เสถียร เพื่อความเร็วสูงสุด
+  NODE_VERSION = "20"
+
+[[redirects]]
+  # สำหรับแอปพลิเคชันแบบ Single Page Application (SPA) เพื่อให้รองรับการรีเฟรชหน้าเว็บ
+  from = "/*"
+  to = "/index.html"
+  status = 200
